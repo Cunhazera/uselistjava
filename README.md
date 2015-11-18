@@ -12,6 +12,6 @@ S = Sword.
 
 # About the solution
 
-The main Java code of this project uses TreeMap with two params (key and value). Each key is a letter from the words from the list of items. And the value is it content.
+The [main Java code of this project](https://github.com/Cunhazera/uselistjava/blob/master/src/main/java/challenge/job/App.java) uses TreeMap with two params (key and value). Each key is a letter from the words from the list of items. And the value is it content.
 
 So it's not necessary to create one List<String> for each letter from the Items. The TreeMap already sort it alphabetically and separate into groups.
