@@ -13,14 +13,16 @@ public class App {
 
 		for (int i = 0; i < itemsList.size(); i++) {
 			char key = itemsList.get(i).charAt(0);
-			ArrayList<String> col = null;
-			if(map.containsKey(key)){
-				col = map.get(key);
-			}else{
-				col = new ArrayList<String>();
-				map.put(key, col);
+			ArrayList<String> collectionList = null;
+
+			if (map.containsKey(key))
+				collectionList = map.get(key);
+
+			else {
+				collectionList = new ArrayList<String>();
+				map.put(key, collectionList);
 			}
-			col.add(itemsList.get(i));
+			collectionList.add(itemsList.get(i));
 		}
 
 		System.out.println(map);
