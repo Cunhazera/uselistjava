@@ -1,7 +1,5 @@
 package challenge.job;
 
-import static challenge.job.Items.itemsList;
-
 import java.util.ArrayList;
 import java.util.TreeMap;
 
@@ -9,13 +7,20 @@ public class App {
 
 	public static void main(String[] args) {
 
-		TreeMap<Character, String> map = new TreeMap<Character, String>();
+		TreeMap<Character, ArrayList<String>> map = new TreeMap<Character, ArrayList<String>>();
 
-		ArrayList<String> itemsList = itemsList();
-		
+		ArrayList<String> itemsList = Items.itemsList();
+
 		for (int i = 0; i < itemsList.size(); i++) {
 			char key = itemsList.get(i).charAt(0);
-			map.put(key, itemsList.get(i));
+			ArrayList<String> col = null;
+			if(map.containsKey(key)){
+				col = map.get(key);
+			}else{
+				col = new ArrayList<String>();
+				map.put(key, col);
+			}
+			col.add(itemsList.get(i));
 		}
 
 		System.out.println(map);
