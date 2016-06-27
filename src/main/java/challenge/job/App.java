@@ -1,6 +1,9 @@
 package challenge.job;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 import java.util.TreeMap;
 
 public class App {
@@ -10,6 +13,7 @@ public class App {
 		TreeMap<Character, ArrayList<String>> map = new TreeMap<Character, ArrayList<String>>();
 
 		ArrayList<String> itemsList = Items.itemsList();
+		sortList(itemsList);
 
 		for (int i = 0; i < itemsList.size(); i++) {
 			char key = itemsList.get(i).charAt(0);
@@ -27,6 +31,15 @@ public class App {
 
 		System.out.println(map);
 
+	}
+
+	private static <T> List<String> sortList(List<String> list) {
+		Collections.sort(list, new Comparator<String>() {
+			public int compare(String o1, String o2) {
+				return o1.compareToIgnoreCase(o2);
+			};
+		});
+		return list;
 	}
 
 }
