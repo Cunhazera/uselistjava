@@ -1,8 +1,6 @@
 package challenge.job;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -34,11 +32,7 @@ public class App {
 	}
 
 	private static <T> List<String> sortList(List<String> list) {
-		Collections.sort(list, new Comparator<String>() {
-			public int compare(String o1, String o2) {
-				return o1.compareToIgnoreCase(o2);
-			};
-		});
+		list.sort((String o1, String o2) -> o1.compareToIgnoreCase(o2));
 		return list;
 	}
 
